@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const user = {
+    name: "Ledy Lamarr" ,
+    imageUrl: "https://i.imgur.com/yXOvdOSs.jpg" ,
+    imageSize: 200
 }
 
-export default App;
+const user2 = {
+    name: "George Clooney" ,
+    imageUrl: "https://i.pinimg.com/564x/55/77/3a/55773ae8813e42b896a30bca456e78ff.jpg" ,
+    imageSize: 200
+}
+
+export default function Profile() {
+    return  (
+        <>
+            <h1>{user.name}</h1>
+            <img className = "avatar" src={user.imageUrl} alt={"Photo of" + user.name}
+                 style={{width: user.imageSize, height: user.imageSize}}
+                 />
+
+            <h2>{user2.name}</h2>
+            <img className = "avatar" src={user2.imageUrl} alt={"Photo of" + user2.name}
+                 style={{width: user2.imageSize, height: user2.imageSize}}
+                 />
+        </>
+
+    )
+}
